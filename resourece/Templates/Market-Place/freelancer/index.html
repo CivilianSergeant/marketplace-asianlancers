@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>Freelancer | Market Place</title>
+	<link rel="shortcut icon" href="img/fabicon.png">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/testimonials.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/loader.css"/>
+    
+	<link rel="stylesheet" type="text/css" href="3dParty/rs-plugin/css/pi.settings.css"/>
+	<link rel="stylesheet" type="text/css" href="css/slider.css"/>
+	<link rel="stylesheet" type="text/css" href="css/counters.css"/>
+	<link rel="stylesheet" type="text/css" href="css/galleries.css"/>
+	<link rel="stylesheet" type="text/css" href="css/images.css"/>
+	<link rel="stylesheet" type="text/css" href="css/portfolio.css"/>
+	<link rel="stylesheet" type="text/css" href="css/alert-boxes.css"/>
+	<link rel="stylesheet" type="text/css" href="css/animations.css"/>
+	<link rel="stylesheet" type="text/css" href="3dParty/colorbox/colorbox.css"/>
+    <link rel="stylesheet" type="text/css" href="css/selectbox.css" />
+    <link rel="stylesheet" href="css/menu-style.css" type="text/css" media="screen"/>    
+	<!--Fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic'
+		  rel='stylesheet' type='text/css'>
+	<!--Fonts with Icons-->
+	<link rel="stylesheet" href="3dParty/fontello/css/fontello.css"/>
+	<!--[if lte IE 8]>
+	<script src="scripts/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+<div id="pi-all">
+
+<!-- Header -->
+<div class="pi-main-header-w">
+
+<!-- Header row -->
+<div class="pi-section-w pi-section-header-w pi-section-base pi-section-header-sm-w pi-shadow-bottom pi-border-top-light">
+		<div class="pi-section pi-section-header pi-section-header-sm pi-clearfix">
+
+		<!-- Menu -->
+		<div class="pi-header-block">
+			<ul class="pi-menu pi-has-hover-border pi-items-have-borders pi-full-height pi-hidden-xs">
+				<!-- Home -->
+			<li><a href="#"><span>Home</span></a></li>                
+            <li><a href=""><span>How It Works</span></a></li>
+            <li><a href=""><span>Contact</span></a></li>
+			</ul>
+            
+		</div>
+		<!-- End menu -->
+		
+		<!-- Search -->
+		<div class="pi-header-block pi-pull-right pi-hidden-sm">
+			
+           <a class="btn pi-btn-base-2 pi-btn-small" href="sign-in.html"> <i class="icon-login pi-icon-left"></i> Login </a>
+           <a class="btn pi-btn-base-2 pi-btn-small" href="sign-up.html"> <i class="icon-login pi-icon-left"></i> Signup </a>
+			<!--<ul id="ldd_menu" class="ldd_menu">
+				<li>
+					<span class="user-icon"><img src="img/icon-man.png" width="15" height="18" alt="0" /></span>
+					<div class="ldd_submenu">
+						<ul>
+							<li><a href="#">Settings</a></li>
+							<li><a href="#">Help</a></li>
+							<li><a href="#">Logout</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>-->
+		</div>
+		<!-- End search -->
+		
+		<!-- Mobile menu button -->
+		<div class="pi-header-block pi-pull-right pi-hidden-lg-only pi-hidden-md-only pi-hidden-sm-only">
+			<button class="btn pi-btn pi-btn-dark pi-btn-no-border pi-mobile-menu-toggler"><i class="icon-menu pi-text-center"></i></button>
+		</div>
+		<!-- End mobile menu button -->
+		
+		<!-- Mobile menu -->
+		<div class="pi-section-menu-mobile-w pi-section-dark">
+			<div class="pi-section-menu-mobile">
+
+				<!-- Search form -->
+				<form class="form-inline pi-search-form-wide ng-pristine ng-valid" role="form">
+					<div class="pi-input-with-icon">
+						<div class="pi-input-icon"><i class="icon-search-1"></i></div>
+						<input type="text" class="form-control pi-input-wide" placeholder="Search..">
+					</div>
+				</form>
+				<!-- End search form -->
+
+				<ul class="pi-menu-mobile pi-menu-mobile-dark">
+				<li><a href="#"><span>Home</span></a></li>
+				<li><a href="#"><span>Work</span></a></li>
+				<li><a href="#"><span>Contact us</span></a></li>
+				</ul>
+
+			</div>
+		</div>
+
+		<!-- End mobile menu -->
+
+		</div>
+	</div>
+<!-- End header row -->
+
+<div class="pi-header-row-sticky-w">
+<!-- Header row -->
+<div class="pi-section-w pi-section-header-w pi-section-white pi-section-header-lg-w pi-header-row-sticky pi-shadow-bottom">
+<div class="pi-section pi-section-header pi-section-header-lg pi-clearfix">
+
+<!-- Logo -->
+<div class="pi-header-block pi-header-block-logo">
+	<a href="index.html"><img src="img/logo-base.png" alt=""></a>
+</div>
+<!-- End logo -->
+<!-- Menu -->
+<div class="pi-header-block pi-pull-right">
+
+<div class="pi-header-block pi-pull-right pi-hidden-sm">
+			
+            
+			
+<form class="pi-search-form-wide ng-pristine ng-valid pi-text-center pi-margin-bottom-20" action="Job-list-view.html" style="margin-top:28px;" role="form">
+<select name="Items" id="Items" class="form-control form-control-budjet" style="width:165px; height:38px;" >
+<option>Browse Categories</option>
+
+    <option>Website designing</option>
+    <option>Website programing</option>
+    <option>Banner/graphic development</option>
+    <option>Mobile apps development</option>
+    <option>Ecommerce</option>
+    <option>SEO</option>
+</select>
+<!--
+<select name="Items2" id="Items2" class="selectbox2 form-control form-control-budjet" style="width:120px; height:38px;" >
+<option>Jobs</option>
+<option>Freelancers</option>
+</select>-->
+
+
+
+
+	<div class="pi-input-inline" style="margin-right: -7px; width:270px;">
+		<input class="form-control pi-input-wide" id="exampleInputSearch" placeholder="e.g. Inspiration" style="border-radius: 3px 0 0 3px; border-right-width: 0; width:100%;" type="text" >
+		</div>
+	<button type="submit" class="btn pi-btn-base pi-btn-icon-big" style="border-radius: 0 3px 3px 0;"><i class="icon-search"></i></button>
+				
+</form>
+		
+		</div>
+</div>
+<!-- End menu -->
+
+<!-- Mobile menu button -->
+<div class="pi-header-block pi-pull-right pi-hidden-lg-only pi-hidden-md-only">
+	<button class="btn pi-btn pi-mobile-menu-toggler" data-target="#pi-main-mobile-menu">
+		<i class="icon-menu pi-text-center"></i>
+	</button>
+</div>
+<!-- End mobile menu button -->
+
+
+	<!-- Mobile menu -->
+	<div id="pi-main-mobile-menu" class="pi-section-menu-mobile-w pi-section-dark">
+		<div class="pi-section-menu-mobile">
+
+			<!-- Search form -->
+			<form class="form-inline pi-search-form-wide ng-pristine ng-valid" role="form">
+				<div class="pi-input-with-icon">
+					<div class="pi-input-icon"><i class="icon-search-1"></i></div>
+					<input type="text" class="form-control pi-input-wide" placeholder="Search..">
+				</div>
+			</form>
+			<!-- End search form -->
+
+			<ul class="pi-menu-mobile pi-items-have-borders pi-menu-mobile-dark">
+				<li class="active"><a href="index.html"><span>Home</span></a></li>
+				<li><a href="#"><span>Work</span></a></li>
+				<li><a href="#"><span>Contact us</span></a></li>			
+			</ul>
+
+		</div>
+	</div>
+	<!-- End mobile menu -->
+
+</div>
+</div>
+<!-- End header row -->
+</div>
+
+</div>
+<!-- End header -->
+
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="tp-banner-container free-bann">
+<div class="tp-banner pi-revolution-slider" >
+<ul class="">
+<!-- SLIDE -->
+<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" style="text-align:center; " >
+<img src="img/freelancer.jpg"  alt=""  data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
+<div class="free-box"><h1>118,026 Jobs</h1><span>posted in past 30 days</span></div>
+
+</li>	
+
+</ul>
+</div>
+</div>
+
+<span class="revolution-slider"></span>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+			
+<div class="pi-section-w pi-section-white piCaptions" style="padding:3% 7% 3%; background:#FFF; text-align:center;">		
+<h1 class="lead-30 pi-text-dark pi-text-center" style="padding:2% 10%; text-transform:uppercase;">Find talented freelancers Jobs ready to...<br/>
+<p class="lead-20 pi-text-dark pi-text-center pi-padding-top-20 pi-margin-bottom-25" style="text-transform:none;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+</h1>
+
+<div class="pi-container">
+
+
+    <div class="row">
+    <div class="col-md-4">
+       <div style="" class="services-post triggerAnimation animated fadeInLeft" data-animate="fadeInLeft">
+       <a href="Job-list-view.html"><i class="fa fa-globe"><img src="img/Logos/web-design.png" alt="" /></i></a>
+       <div class="services-post-content"><h3>Website designing</h3><p>Lorem Ipsum is simply dummy text of the printingry.</p></div></div>
+    </div>
+       
+       <div class="col-md-4">       
+       <div style="" class="services-post2 triggerAnimation animated fadeInUp" data-animate="fadeInUp"><a href="Job-list-view.html"><i class="fa fa-globe"><img src="img/Logos/development.png" alt="0" /></i></a>  <div class="services-post-content"><h3>Website programing</h3><p>Lorem Ipsum is simply dummy text of the printingry.</p></div></div></div>
+       
+       <div class="col-md-4">
+       <div style="" class="services-post3 triggerAnimation animated fadeInRight" data-animate="fadeInRight"><a href="Job-list-view.html"><i class="fa fa-print"><img src="img/Logos/graphic.png" alt="" /></i></a>  <div class="services-post-content"><h3>Banner/graphic development</h3><p>Lorem Ipsum is simply du.</p></div></div></div>
+       
+       <div class="col-md-4">
+       <div style="" class="services-post4 triggerAnimation animated fadeInLeft" data-animate="fadeInLeft"><a href="Job-list-view.html"><i class="fa fa-tasks"><img src="img/Logos/mobile-apps.png" alt="0" /></i></a>  <div class="services-post-content"><h3>Mobile apps development</h3><p>Lorem Ipsum is simply dum.</p></div></div></div>
+       
+       <div class="col-md-4">
+       <div style="" class="services-post5 triggerAnimation animated fadeInDown" data-animate="fadeInDown"><a href="Job-list-view.html"><i class="fa fa-hdd-o"><img src="img/Logos/shop.png" alt="0" /></i></a>  <div class="services-post-content"><h3>Ecommerce</h3><p>Lorem Ipsum is simply dummy text of the printingry.</p></div></div></div>
+       
+       <div class="col-md-4">
+       <div style="" class="services-post6 triggerAnimation animated fadeInRight" data-animate="fadeInRight"><a href="Job-list-view.html"><i class="fa fa-cloud"><img src="img/Logos/seo.png" alt="0" /></i></a>  <div class="services-post-content"><h3>SEO</h3><p>Lorem Ipsum is simply dummy text of the printingry.</p></div></div></div></div>
+
+
+ </div>
+
+</div>
+
+<div class="pi-section-w pi-section-white" style="background:url(img/noise.png) repeat; background-color: rgba(241, 245, 249, 1);">
+
+	<div class="pi-section">
+
+<div class="pi-row">
+
+			<div class="pi-col-sm-10 pi-col-sm-offset-1 pi-padding-bottom-60">
+				<p class="lead-30 pi-text-dark pi-text-center">
+					Nam libero tempore, <span class="pi-text-bg-base">cum soluta</span> nobis est optio cumque nihil impedit quo minus id quod maxime
+				</p>
+			</div>
+
+</div>
+
+
+		<div class="pi-row">
+			
+
+			
+			<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-30">
+			
+				<div class="pi-icon-box pi-icon-box-icon-big">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-circle pi-icon-box-icon-base" style="background: #58DA82;">
+						<i class="icon-lamp"></i>
+					</div>
+					
+					<div class="pi-icon-box-content-2">
+					
+						<h4><a href="#" class="pi-link-dark">How It Works</a></h4>
+
+						<p class="pi-margin-bottom-10">
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+						</p>
+						
+						<p>
+							
+							<a class="btn pi-btn pi-btn-small" href="#">More Info</a>
+						
+						</p>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- End col 4 -->
+			
+			<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-30">
+			
+				<div class="pi-icon-box pi-icon-box-icon-big">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-circle pi-icon-box-icon-base" style="background: #61D3E2;">
+						<i class="icon-monitor"></i>
+					</div>
+					
+					<div class="pi-icon-box-content-2">
+					
+						<h4><a href="#" class="pi-link-dark">Money-Back Guarantee</a></h4>
+
+						<p class="pi-margin-bottom-10">
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+						</p>
+						
+						<p>
+							<a class="btn pi-btn pi-btn-small" href="#">More Info</a>
+						
+						</p>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- End col 4 -->
+
+			<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-30">
+			
+				<div class="pi-icon-box pi-icon-box-icon-big">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-circle pi-icon-box-icon-base" style="background: #DF608E;">
+						<i class="icon-brush"></i>
+					</div>
+					
+					<div class="pi-icon-box-content-2">
+					
+						<h4><a href="#" class="pi-link-dark">Enterprise Solution</a></h4>
+
+						<p class="pi-margin-bottom-10">
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+						</p>
+						
+						<p>
+							
+							<a class="btn pi-btn pi-btn-small" href="#">More Info</a>
+						
+						</p>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- End col 4 -->
+		
+		
+			
+		</div>
+		<!-- End row -->
+		
+	</div>
+
+</div>
+
+<div class="pi-section-w pi-section-parallax" style="background-image: url(img_external/gallery/new-york.jpg);">
+	<div class="pi-texture pi-section-overlay-base"></div>
+	<div class="pi-section pi-padding-bottom-10">
+	
+		<!-- Row -->
+		<div class="pi-row">
+			
+			<!-- Col 10 -->
+			<div class="pi-col-sm-10 pi-col-sm-offset-1 pi-padding-bottom-30">
+				<p class="lead-30 pi-text-white pi-text-center">
+					Nam libero tempore, <span class="pi-text-bg-base">cum soluta</span> nobis est optio cumque nihil impedit quo minus id quod maxime
+				</p>
+			</div>
+			<!-- End col 10 -->
+			
+		</div>
+		<!-- End row -->
+		
+		<!-- Row -->
+		<div class="pi-row pi-liquid-col-2xs-2 pi-padding-bottom-20 pi-liquid-col-sm-5 pi-gallery pi-gallery-small-margins">
+			<!-- Logo -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-tooltip" data-placement="top" title="" data-original-title="Nike">
+					<a href="#">
+					<span class="pi-img-border-double pi-img-opacity-70" style="background: #f6f9f9;">
+						<img src="img_external/clients/nike-2.png" alt="">
+					</span>
+					</a>
+				</div>
+			</div>
+			<!-- End logo -->
+			
+			<!-- Logo -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-tooltip" data-placement="top" title="" data-original-title="Google">
+					<a href="#">
+					<span class="pi-img-border-double pi-img-opacity-70" style="background: #f6f9f9;">
+						<img src="img_external/clients/google-2.png" alt="">
+					</span>
+					</a>
+				</div>
+			</div>
+			<!-- End logo -->
+			
+			<!-- Logo -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-tooltip" data-placement="top" title="" data-original-title="Sony">
+					<a href="#">
+					<span class="pi-img-border-double pi-img-opacity-70" style="background: #f6f9f9;">
+						<img src="img_external/clients/sony-2.png" alt="">
+					</span>
+					</a>
+				</div>
+			</div>
+			<!-- End logo -->
+			
+			<!-- Logo -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-tooltip" data-placement="top" title="" data-original-title="Virgin">
+					<a href="#">
+					<span class="pi-img-border-double pi-img-opacity-70" style="background: #f6f9f9;">
+						<img src="img_external/clients/virgin-2.png" alt="">
+					</span>
+					</a>
+				</div>
+			</div>
+			<!-- End logo -->
+            
+            <!-- Logo -->
+			<div class="pi-gallery-item">
+				<div class="pi-img-w pi-tooltip" data-placement="top" title="" data-original-title="Virgin">
+					<a href="#">
+					<span class="pi-img-border-double pi-img-opacity-70" style="background: #f6f9f9;">
+						<img src="img_external/clients/virgin-2.png" alt="">
+					</span>
+					</a>
+				</div>
+			</div>
+			<!-- End logo -->
+
+			
+		</div>
+		<!-- End row -->
+		
+	</div>
+</div>
+
+</div>
+
+
+<div class="pi-section-w pi-border-bottom pi-border-top-light pi-section-grey">
+	
+	<div class="pi-section pi-padding-bottom-10">
+
+		<!-- Row -->
+		<div class="pi-row">
+
+			<!-- Col 4 -->
+			<div class="pi-col-md-4 pi-padding-bottom-30">
+
+				<h6 class="pi-margin-bottom-20 pi-weight-700 pi-uppercase pi-letter-spacing">
+					About DJIT
+				</h6>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknow.
+				</p>
+
+			</div>
+			<!-- End col 4 -->
+			
+			<div class="pi-clearfix pi-hidden-lg-only pi-hidden-md-only"></div>
+
+			<!-- Col 4 -->
+			<div class="pi-col-md-4 pi-col-sm-6 pi-padding-bottom-30">
+
+				<h6 class="pi-margin-bottom-20 pi-weight-700 pi-uppercase pi-letter-spacing">
+					Location
+				</h6>
+				<ul class="pi-no-bullets">
+					<li>
+						<span class="pi-bullet-icon"><i class="icon-location"></i></span>
+						<strong>Address:</strong> BDBL Bhaban, 12 (6th floor)<br/>Kawran Bazaar, Dhaka, Bangladesh. 
+					</li>
+
+					<li>
+						<span class="pi-bullet-icon"><i class="icon-phone"></i></span>
+						<strong>Phone:</strong> 01713493282, 01713493299<br/>
+01713493278, 01856991018
+					</li>
+
+					<li>
+						<span class="pi-bullet-icon"><i class="icon-mail"></i></span>
+						<strong>Email:</strong> <a href="mailto:info@djit.ac">info@djit.ac </a>
+					</li>
+
+					
+
+				</ul>
+
+			</div>
+			<!-- End col 4 -->
+
+			<!-- Col 4 -->
+			<div class="pi-col-md-4 pi-col-sm-6 pi-padding-bottom-30">
+
+				<h6 class="pi-margin-bottom-15 pi-weight-700 pi-uppercase pi-letter-spacing">
+					Follow Us
+				</h6>
+				<ul class="pi-social-icons-simple pi-clearfix">
+					<li><a href="#" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
+					<li><a href="#" class="pi-social-icon-dribbble"><i class="icon-dribbble"></i></a></li>
+					<li><a href="#" class="pi-social-icon-linkedin"><i class="icon-linkedin"></i></a></li>
+				</ul>
+				
+				<!-- Subscribe form -->
+				<form class="pi-grouped-input pi-pi-search-form-wide pi-margin-bottom-10">
+					<button type="submit" class="btn pi-btn-base"><i class="icon-mail"></i></button>
+					<div class="pi-input-inline">
+						<input class="form-control pi-input-wide" placeholder="Enter e-mail for subscribe" type="text">
+					</div>
+				</form>
+				<!-- End subscribe form -->
+				
+				<p class="pi-smaller-text pi-italic pi-letter-spacing pi-text-opacity-70">
+					We promise not to send you spam.
+				</p>
+
+			</div>
+			<!-- End col 4 -->
+
+		</div>
+		<!-- End row -->
+
+	</div>
+
+</div>
+
+<div class="pi-section-w pi-section-header-w pi-section-grey pi-border-top-light pi-border-bottom-strong-base pi-section-header-md-w">
+	
+	<div class="pi-section pi-section-header pi-section-header-md pi-center-text-2xs pi-clearfix">
+
+		<!-- Menu -->
+		<div class="pi-header-block pi-center-text-lg">
+			<ul class="pi-simple-menu pi-full-height pi-hidden-xs">
+
+				<li>
+					<a href="#"><span>Help</span></a>
+				</li>
+				<li>
+					<a href="#"><span>Privacy</span></a>
+				</li>
+				<li>
+					<a href="#"><span>Terms</span></a>
+				</li>
+
+			</ul>
+		</div>
+		<!-- End menu -->
+		
+		<!-- Text -->
+		<span style="margin-right: 0px;" class="pi-header-block pi-pull-right pi-header-block-txt pi-hidden-xs">© 2014. <a href="#" class="pi-link-no-style">Carbon51.com</a>
+		</span>
+		<!-- End text -->
+
+	</div>
+
+</div>
+
+
+</div>
+<div class="pi-scroll-top-arrow" data-scroll-to="0"></div>
+
+<script src="3dParty/jquery-1.11.0.min.js"></script>
+<script src="scripts/pi.easings.js"></script>
+<script src="scripts/pi.helpers.js"></script>
+<script src="scripts/pi.boundManager.js"></script>
+<script src="3dParty/inview.js"></script>
+<script src="scripts/pi.imagesLoader.js"></script>
+<script src="scripts/pi.columnFix.js"></script>
+<script src="scripts/pi.init.caption.js"></script>
+<script src="scripts/pi.slider.js"></script>
+<script src="scripts/pi.init.slider.js"></script>
+<script src="3dParty/gauge.min.js"></script>
+<script src="scripts/pi.counter.js"></script>
+<script src="scripts/pi.init.counter.js"></script>
+<script src="scripts/pi.parallax.js"></script>
+<script src="scripts/pi.init.parallax.js"></script>
+<script src="3dParty/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script src="3dParty/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="scripts/pi.init.revolutionSlider.js"></script>
+<script src="scripts/pi.init.social.js"></script>
+<script src="scripts/pi.ddMenu.js"></script>
+<script src="scripts/pi.init.removeLastElMargin.js"></script>
+<script src="scripts/pi.fixedHeader.js"></script>
+<script src="scripts/pi.mobileMenu.js"></script>
+<script src="scripts/pi.init.submitFormFooter.js"></script>
+<script src="scripts/pi.detectTransition.js"></script>
+<script src="scripts/pi.alert.js"></script>
+<script src="scripts/pi.init.formsBlurClasses.js"></script>
+<script src="scripts/pi.init.placeholder.js"></script>
+<script src="3dParty/colorbox/jquery.colorbox-min.js"></script>
+<script src="scripts/pi.init.colorbox.js"></script>
+<script src="3dParty/jquery.easing.1.3.js"></script>
+<script src="3dParty/jquery.scrollTo.min.js"></script>
+<script src="scripts/pi.init.jqueryScrollTo.js"></script>
+<script src="scripts/pi.scrollTopArrow.js"></script>
+<script type="text/javascript" src="3dParty/jquery.selectbox-0.5.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#Items').selectbox();
+		$('#Items2').selectbox();
+	});
+</script>
+<script type="text/javascript">
+	$(function() {
+		var $menu = $('#ldd_menu');				
+		$menu.children('li').each(function(){
+			var $this = $(this);
+			var $span = $this.children('span');
+			$span.data('width',$span.width());
+			
+			$this.bind('mouseenter',function(){
+				$menu.find('.ldd_submenu').stop(true,true).hide();
+				$span.stop().animate({'width':'auto'},300,function(){
+					$this.find('.ldd_submenu').slideDown(300);
+				});
+			}).bind('mouseleave',function(){
+				$this.find('.ldd_submenu').stop(true,true).slideUp();
+				$span.stop().animate({'width':$span.data('width')+'px'},300);
+			});
+		});
+	});
+</script>
+</body>
+</html>

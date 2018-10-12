@@ -1,0 +1,70 @@
+div.selectbox-wrapper {
+	position:absolute;
+	width:199px!important;
+	background-color:white;
+	border:1px solid #ccc;
+	margin:0px;
+	margin-top:-1px;
+	padding:0px;
+	text-align:left;
+	min-height:10px;
+	overflow:auto;
+}/*Drop down list styles*/
+div.selectbox-wrapper ul {
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}/* Selected item in dropdown list*/
+div.selectbox-wrapper ul li.selected {
+	background-color: #9bc6f2; color:#FFF; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}/* Hover state for dropdown list */
+
+div#Items2_container ul li.selected {background-color: #6aca1d; color:#FFF; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);}
+
+div.selectbox-wrapper ul li.current {background-color: #777; color:#fff;}
+div#Items2_container ul li.current {background-color: #777; color:#fff;}
+
+div.selectbox-wrapper ul li {
+	list-style-type:none;
+	display:block;
+	margin:0;
+	padding:8px 5px; font-size:13px;
+	border-bottom: 1px solid #e4e4e4;
+	cursor:pointer;
+}/* Look and feel of select box */
+div.selectbox-wrapper ul li:last-child{border-bottom:none;}
+.selectbox {
+background:url(../img/drop-down.jpg) right;
+    border: 1px solid;
+	border-color: #7eb3e4 #609ddb #609ddb;
+    border-radius: 3px;
+    box-shadow:none;	
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    color: #fff; text-transform:uppercase;
+    display: inline-block;
+    font-size: 14px;
+    line-height: normal;
+    padding: 8px; cursor:pointer;
+    transition: all 0.1s ease-in-out 0s;
+    vertical-align: middle;
+    width:auto !important;
+}
+
+#Items2_input {
+background:url(../img/drop-down2.jpg) right;
+    border: 1px solid;
+	border-color: #6aca1d;
+    border-radius: 3px;
+    box-shadow:none;	
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    color: #fff; text-transform:uppercase;
+    display: inline-block;
+    font-size: 14px;
+    line-height: normal;
+    padding: 8px; cursor:pointer;
+    transition: all 0.1s ease-in-out 0s;
+    vertical-align: middle;
+    width:140px !important;
+}
+
+#Items2_container{margin-left:203px; margin-top:-1px; width:140px !important;}

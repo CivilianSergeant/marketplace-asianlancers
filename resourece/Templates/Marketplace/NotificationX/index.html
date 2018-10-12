@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Notification</title>
+<link rel="stylesheet" href="css/notification.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" />
+<script src="http://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+    (function($){
+        $(window).load(function(){
+            $("#notificationsBody").mCustomScrollbar({
+        theme:"dark",
+        scrollButtons:{
+          enable:true
+        }
+      });
+        });
+    })(jQuery);
+</script>
+</head>
+
+<body style="width:1000px; margin:0 auto;">
+
+<ul id="nav">
+<li id="notification_li">
+<div id="notificationContainer">
+<div id="notificationTitle">Notifications (1)</div>
+<div id="notificationsBody" class="notifications">
+
+<a href="#" class="noti-bar">
+<img src="img/1.jpg" width="50" height="50" alt="img"  />
+<div class="content">
+<span class="n-title">MD.Tanvir Khan</span>
+<span class="n-body">Lorem Ipsum is simply dummy text of the printing and ty...</span>
+<span class="n-time">12:33</span>
+</div>
+</a>
+
+<a href="#" class="noti-bar active">
+<img src="img/2.jpg" width="50" height="50" alt="img"  />
+<div class="content">
+<span class="n-title">MD.Tanvir Khan</span>
+<span class="n-body">Lorem Ipsum is simply dummy text of the printing and ty...</span>
+<span class="n-time">12:33</span>
+</div>
+</a>
+
+<a href="#" class="noti-bar">
+<img src="img/3.jpg" width="50" height="50" alt="img"  />
+<div class="content">
+<span class="n-title">MD.Tanvir Khan</span>
+<span class="n-body">Lorem Ipsum is simply dummy text of the printing and ty...</span>
+<span class="n-time">12:33</span>
+</div>
+</a>
+
+<a href="#" class="noti-bar">
+<img src="img/4.png" width="50" height="50" alt="img"  />
+<div class="content">
+<span class="n-title">MD.Tanvir Khan</span>
+<span class="n-body">Lorem Ipsum is simply dummy text of the printing and ty...</span>
+<span class="n-time">12:33</span>
+</div>
+</a>
+
+<a href="#" class="noti-bar">
+<img src="img/2.jpg" width="50" height="50" alt="img"  />
+<div class="content">
+<span class="n-title">MD.Tanvir Khan</span>
+<span class="n-body">Lorem Ipsum is simply dummy text of the printing and ty...</span>
+<span class="n-time">12:33</span>
+</div>
+</a>
+
+<a href="#" class="noti-bar">
+<img src="img/3.jpg" width="50" height="50" alt="img"  />
+<div class="content">
+<span class="n-title">MD.Tanvir Khan</span>
+<span class="n-body">Lorem Ipsum is simply dummy text of the printing and ty...</span>
+<span class="n-time">12:33</span>
+</div>
+</a>
+
+</div>
+<div id="notificationFooter"><a href="#">See All</a></div>
+</div>
+
+</li>
+
+</ul>
+
+</body>
+</html>

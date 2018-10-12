@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>Sign In</title>
+
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/loader.css"/>
+	<link rel="stylesheet" type="text/css" href="css/boxes.css"/>
+	<link rel="stylesheet" type="text/css" href="css/alert-boxes.css"/>
+	<link rel="stylesheet" type="text/css" href="css/animations.css"/>
+	<link rel="stylesheet" type="text/css" href="3dParty/colorbox/colorbox.css"/>	
+<link rel="stylesheet" type="text/css" href="css/selectbox.css" />
+	<!--Fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic'
+		  rel='stylesheet' type='text/css'>
+	<!--Fonts with Icons-->
+	<link rel="stylesheet" href="3dParty/fontello/css/fontello.css"/>
+
+	<!--[if lte IE 8]>
+	<script src="scripts/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+<div id="pi-all">
+
+<!-- Header -->
+<div class="pi-main-header-w">
+
+<!-- Header row -->
+<div class="pi-section-w pi-section-header-w pi-section-base pi-section-header-sm-w pi-shadow-bottom pi-border-top-light">
+		<div class="pi-section pi-section-header pi-section-header-sm pi-clearfix">
+
+		<!-- Menu -->
+		<div class="pi-header-block">
+			<ul class="pi-menu pi-has-hover-border pi-items-have-borders pi-full-height pi-hidden-xs">
+				<!-- Home -->
+			<li><a href="#"><span>Home</span></a></li>                
+            <li><a href=""><span>How It Works</span></a></li>
+            <li><a href=""><span>Contact</span></a></li>
+			</ul>
+            
+		</div>
+		<!-- End menu -->
+		
+		<!-- Search -->
+		<div class="pi-header-block pi-pull-right pi-hidden-sm">
+			
+           <a class="btn pi-btn-base-2 pi-btn-small" href="sign-in.html"> <i class="icon-login pi-icon-left"></i> Login </a>
+           <a class="btn pi-btn-base-2 pi-btn-small" href="sign-up.html"> <i class="icon-login pi-icon-left"></i> Signup </a>
+			<!--<ul id="ldd_menu" class="ldd_menu">
+				<li>
+					<span class="user-icon"><img src="img/icon-man.png" width="15" height="18" alt="0" /></span>
+					<div class="ldd_submenu">
+						<ul>
+							<li><a href="#">Settings</a></li>
+							<li><a href="#">Help</a></li>
+							<li><a href="#">Logout</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>-->
+		</div>
+		<!-- End search -->
+		
+		<!-- Mobile menu button -->
+		<div class="pi-header-block pi-pull-right pi-hidden-lg-only pi-hidden-md-only pi-hidden-sm-only">
+			<button class="btn pi-btn pi-btn-dark pi-btn-no-border pi-mobile-menu-toggler"><i class="icon-menu pi-text-center"></i></button>
+		</div>
+		<!-- End mobile menu button -->
+		
+		<!-- Mobile menu -->
+		<div class="pi-section-menu-mobile-w pi-section-dark">
+			<div class="pi-section-menu-mobile">
+
+				<!-- Search form -->
+				<form class="form-inline pi-search-form-wide ng-pristine ng-valid" role="form">
+					<div class="pi-input-with-icon">
+						<div class="pi-input-icon"><i class="icon-search-1"></i></div>
+						<input type="text" class="form-control pi-input-wide" placeholder="Search..">
+					</div>
+				</form>
+				<!-- End search form -->
+
+				<ul class="pi-menu-mobile pi-menu-mobile-dark">
+				<li><a href="#"><span>Home</span></a></li>
+				<li><a href="#"><span>Work</span></a></li>
+				<li><a href="#"><span>Contact us</span></a></li>
+				</ul>
+
+			</div>
+		</div>
+
+		<!-- End mobile menu -->
+
+		</div>
+	</div>
+<!-- End header row -->
+
+<div class="pi-header-row-sticky-w">
+<!-- Header row -->
+<div class="pi-section-w pi-section-header-w pi-section-white pi-section-header-lg-w pi-header-row-sticky pi-shadow-bottom">
+<div class="pi-section pi-section-header pi-section-header-lg pi-clearfix">
+
+<!-- Logo -->
+<div class="pi-header-block pi-header-block-logo">
+	<a href="index.html"><img src="img/logo-base.png" alt=""></a>
+</div>
+<!-- End logo -->
+<!-- Menu -->
+<div class="pi-header-block pi-pull-right">
+
+<div class="pi-header-block pi-pull-right pi-hidden-sm">
+			
+            
+			
+<form class="pi-search-form-wide ng-pristine ng-valid pi-text-center pi-margin-bottom-20" action="Job-list-view.html" style="margin-top:28px;" role="form">
+<select name="Items" id="Items" class="form-control form-control-budjet" style="width:165px; height:38px;" >
+<option>Browse Categories</option>
+
+    <option>Website designing</option>
+    <option>Website programing</option>
+    <option>Banner/graphic development</option>
+    <option>Mobile apps development</option>
+    <option>Ecommerce</option>
+    <option>SEO</option>
+</select>
+<!--
+<select name="Items2" id="Items2" class="selectbox2 form-control form-control-budjet" style="width:120px; height:38px;" >
+<option>Jobs</option>
+<option>Freelancers</option>
+</select>-->
+
+
+
+
+	<div class="pi-input-inline" style="margin-right: -7px; width:270px;">
+		<input class="form-control pi-input-wide" id="exampleInputSearch" placeholder="e.g. Inspiration" style="border-radius: 3px 0 0 3px; border-right-width: 0; width:100%;" type="text" >
+		</div>
+	<button type="submit" class="btn pi-btn-base pi-btn-icon-big" style="border-radius: 0 3px 3px 0;"><i class="icon-search"></i></button>
+				
+</form>
+		
+		</div>
+</div>
+<!-- End menu -->
+
+<!-- Mobile menu button -->
+<div class="pi-header-block pi-pull-right pi-hidden-lg-only pi-hidden-md-only">
+	<button class="btn pi-btn pi-mobile-menu-toggler" data-target="#pi-main-mobile-menu">
+		<i class="icon-menu pi-text-center"></i>
+	</button>
+</div>
+<!-- End mobile menu button -->
+
+
+	<!-- Mobile menu -->
+	<div id="pi-main-mobile-menu" class="pi-section-menu-mobile-w pi-section-dark">
+		<div class="pi-section-menu-mobile">
+
+			<!-- Search form -->
+			<form class="form-inline pi-search-form-wide ng-pristine ng-valid" role="form">
+				<div class="pi-input-with-icon">
+					<div class="pi-input-icon"><i class="icon-search-1"></i></div>
+					<input type="text" class="form-control pi-input-wide" placeholder="Search..">
+				</div>
+			</form>
+			<!-- End search form -->
+
+			<ul class="pi-menu-mobile pi-items-have-borders pi-menu-mobile-dark">
+				<li class="active"><a href="index.html"><span>Home</span></a></li>
+				<li><a href="#"><span>Work</span></a></li>
+				<li><a href="#"><span>Contact us</span></a></li>			
+			</ul>
+
+		</div>
+	</div>
+	<!-- End mobile menu -->
+
+</div>
+</div>
+<!-- End header row -->
+</div>
+
+</div>
+<!-- End header -->
+
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+<div class="pi-section-w pi-section-white piICheck piStylishSelect" style="background: #f4f6f6;">
+	<div class="pi-section pi-padding-bottom-60">
+		
+		<div class="pi-text-center pi-margin-bottom-50">
+			<h1 class="pi-uppercase pi-weight-700 pi-has-border pi-has-tall-border pi-has-short-border">
+				Sign In
+			</h1>
+		</div>
+		
+		<!-- Row -->
+		<div class="pi-row">
+			
+			<!-- Col 4 -->
+			<div class="pi-col-md-4 pi-col-md-offset-4 pi-col-sm-6 pi-col-sm-offset-3 pi-col-xs-8 pi-col-xs-offset-2">
+			<form action="profile.html">
+				<!-- Box -->
+				<div class="pi-box pi-round pi-shadow-15">
+					
+					<!-- Email form -->
+					<div class="form-group">
+						<div class="pi-input-with-icon">
+							<div class="pi-input-icon"><i class="icon-mail"></i></div>
+							<input type="email" class="form-control" id="exampleInputEmail" placeholder="E-mail">
+						</div>
+					</div>
+					<!-- End email form -->
+					
+					<!-- Password form -->
+					<div class="form-group">
+						<div class="pi-input-with-icon">
+							<div class="pi-input-icon"><i class="icon-lock"></i></div>
+							<input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+						</div>
+					</div>
+					<!-- End password form -->
+
+					<p class="pi-pull-right pi-small-text">
+						<a href="#">
+							Forgot password?
+						</a>
+					</p>
+					
+					<!-- Checkbox -->
+					<div class="checkbox">
+						<label class="pi-small-text">
+							<input type="checkbox">Remember me
+						</label>
+					</div>
+					<!-- End checkbox -->
+
+					<!-- Submit button -->
+					<p>
+						<button type="submit" class="btn pi-btn-base pi-btn-wide pi-weight-600">
+							Sign In
+						</button>
+					</p>
+					<!-- End submit button -->
+					
+				</div>
+				<!-- End box -->
+				</form>
+				<p class="pi-text-center">
+					Don't have Account? <a href="sign-up.html" class="pi-weight-600">Sign Up</a>
+				</p>
+				
+			</div>
+			<!-- End col 4 -->
+			
+		</div>
+		<!-- End row -->
+		
+	</div>
+</div>
+<!-- - - - - - - - - - END SECTION - - - - - - - - - --></div>
+
+<div class="pi-section-w pi-border-bottom pi-border-top-light pi-section-dark">
+	
+	<div class="pi-section pi-padding-bottom-10">
+
+		<!-- Row -->
+		<div class="pi-row">
+
+			<!-- Col 4 -->
+			<div class="pi-col-md-4 pi-padding-bottom-30">
+
+				<h6 class="pi-margin-bottom-20 pi-weight-700 pi-uppercase pi-letter-spacing">
+					About DJIT
+				</h6>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknow.
+				</p>
+
+			</div>
+			<!-- End col 4 -->
+			
+			<div class="pi-clearfix pi-hidden-lg-only pi-hidden-md-only"></div>
+
+			<!-- Col 4 -->
+			<div class="pi-col-md-4 pi-col-sm-6 pi-padding-bottom-30">
+
+				<h6 class="pi-margin-bottom-20 pi-weight-700 pi-uppercase pi-letter-spacing">
+					Location
+				</h6>
+				<ul class="pi-no-bullets">
+					<li>
+						<span class="pi-bullet-icon"><i class="icon-location"></i></span>
+						<strong>Address:</strong> BDBL Bhaban, 12 (6th floor)<br/>Kawran Bazaar, Dhaka, Bangladesh. 
+					</li>
+
+					<li>
+						<span class="pi-bullet-icon"><i class="icon-phone"></i></span>
+						<strong>Phone:</strong> 01713493282, 01713493299<br/>
+01713493278, 01856991018
+					</li>
+
+					<li>
+						<span class="pi-bullet-icon"><i class="icon-mail"></i></span>
+						<strong>Email:</strong> <a href="mailto:info@djit.ac">info@djit.ac </a>
+					</li>
+
+					
+
+				</ul>
+
+			</div>
+			<!-- End col 4 -->
+
+			<!-- Col 4 -->
+			<div class="pi-col-md-4 pi-col-sm-6 pi-padding-bottom-30">
+
+				<h6 class="pi-margin-bottom-15 pi-weight-700 pi-uppercase pi-letter-spacing">
+					Follow Us
+				</h6>
+				<ul class="pi-social-icons-simple pi-clearfix">
+					<li><a href="#" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
+					<li><a href="#" class="pi-social-icon-dribbble"><i class="icon-dribbble"></i></a></li>
+					<li><a href="#" class="pi-social-icon-linkedin"><i class="icon-linkedin"></i></a></li>
+				</ul>
+				
+				<!-- Subscribe form -->
+				<form class="pi-grouped-input pi-pi-search-form-wide pi-margin-bottom-10">
+					<button type="submit" class="btn pi-btn-base"><i class="icon-mail"></i></button>
+					<div class="pi-input-inline">
+						<input class="form-control pi-input-wide" placeholder="Enter e-mail for subscribe" type="text">
+					</div>
+				</form>
+				<!-- End subscribe form -->
+				
+				<p class="pi-smaller-text pi-italic pi-letter-spacing pi-text-opacity-70">
+					We promise not to send you spam.
+				</p>
+
+			</div>
+			<!-- End col 4 -->
+
+		</div>
+		<!-- End row -->
+
+	</div>
+
+</div>
+
+<div class="pi-section-w pi-section-header-w pi-section-grey pi-border-top-light pi-border-bottom-strong-base pi-section-header-md-w">
+	
+	<div class="pi-section pi-section-header pi-section-header-md pi-center-text-2xs pi-clearfix">
+
+		<!-- Menu -->
+		<div class="pi-header-block pi-center-text-lg">
+			<ul class="pi-simple-menu pi-full-height pi-hidden-xs">
+
+				<li>
+					<a href="#"><span>Help</span></a>
+				</li>
+				<li>
+					<a href="#"><span>Privacy</span></a>
+				</li>
+				<li>
+					<a href="#"><span>Terms</span></a>
+				</li>
+
+			</ul>
+		</div>
+		<!-- End menu -->
+		
+		<!-- Text -->
+		<span style="margin-right: 0px;" class="pi-header-block pi-pull-right pi-header-block-txt pi-hidden-xs">© 2014. <a href="#" class="pi-link-no-style">Carbon51.com</a>
+		</span>
+		<!-- End text -->
+
+	</div>
+
+</div>
+
+</div>
+<div class="pi-scroll-top-arrow" data-scroll-to="0"></div>
+
+<script src="3dParty/jquery-1.11.0.min.js"></script>
+<script src="scripts/pi.helpers.js"></script>
+<script src="scripts/pi.boundManager.js"></script>
+<script src="scripts/pi.imagesLoader.js"></script>
+<script src="scripts/pi.init.social.js"></script>
+<script src="scripts/pi.ddMenu.js"></script>
+<script src="scripts/pi.init.removeLastElMargin.js"></script>
+<script src="scripts/pi.fixedHeader.js"></script>
+<script src="scripts/pi.mobileMenu.js"></script>
+<script src="scripts/pi.init.submitFormFooter.js"></script>
+<script src="scripts/pi.detectTransition.js"></script>
+<script src="scripts/pi.alert.js"></script>
+<script src="scripts/pi.init.formsBlurClasses.js"></script>
+<script src="scripts/pi.init.placeholder.js"></script>
+<script src="3dParty/colorbox/jquery.colorbox-min.js"></script>
+<script src="scripts/pi.init.colorbox.js"></script>
+<script src="3dParty/jquery.easing.1.3.js"></script>
+<script src="3dParty/jquery.scrollTo.min.js"></script>
+<script src="scripts/pi.init.jqueryScrollTo.js"></script>
+<script src="scripts/pi.scrollTopArrow.js"></script>
+<script type="text/javascript" src="3dParty/jquery.selectbox-0.5.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#Items').selectbox();
+		$('#Items2').selectbox();
+	});
+</script>
+</body>
+</html>

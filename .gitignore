@@ -1,0 +1,15 @@
+.idea
+/bootstrap/compiled.php
+/app/config/database.php
+/app/storage/*
+composer.phar
+composer.lock
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+/app/config/database.php
+/vendor
+CONTRIBUTING.md
+
+marketplace.clpprj

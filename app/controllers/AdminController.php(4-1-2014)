@@ -1,0 +1,400 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: Himel
+ * Date: 8/18/14
+ * Time: 1:36 PM
+ */
+class AdminController extends BaseController
+{
+    protected $user;
+    protected $adminProfile;
+    public function __construct()
+    {
+        parent::__construct();
+        $this->user = Sentry::getUser();
+        $this->adminProfile = Admin::find($this->user->user_id);
+
+        View::share('notifications',(count($this->adminProfile))? $this->adminProfile->UnreadNotifications : array());
+        View::share('messageCount',DiscussionComments::UnreadMessageCount($this->user->user_id));
+        //View::share('notifications_count',0);
+    }
+
+    public function Index()
+    {
+        return Redirect::to('admin/notifications');
+        /*$viewModel = array();
+        $viewModel['all_notifications'] = $this->adminProfile->UnreadNotifications()->paginate(20);
+        return Theme::make('admin.index', $viewModel);*/
+
+    }
+
+    public function Notifications()
+    {
+        $viewModel = array();
+        $viewModel['all_notifications'] = $this->adminProfile->Notifications()->paginate(20);
+        return Theme::make('admin.all-notification', $viewModel);
+
+    }
+
+    public function CreateDefaultProfile()
+    {
+        $viewModel = array();
+
+        if (Request::isMethod('post')) {
+
+            $response=array();
+            $post_data = Input::all();
+            $valid_msg = RegisterValidator::validate($post_data);
+
+            if (is_array($valid_msg) && empty($valid_msg)) {
+                try {
+
+                   $user = Sentry::createUser(array(
+                        'email' => $post_data['email'],
+                        'password' => $post_data['password'],
+                        'first_name' => $post_data['first_name'],
+                        'last_name' => $post_data['last_name'],
+                        'user_type' => ($post_data['userList']['value']=='Client')?'Client':'Freelancer',
+                        'is_agent' => ($post_data['userList']['value'] == 'Agency')?1:0,
+                        'activated' => true
+                    ));
+
+
+                    // Assign user permission and build default profile for Freelancers / Acency & Clients
+                    Helpers::AssignPermission($user);
+
+                    switch($post_data['userList']['value'])
+                    {
+                        case 'Client':
+                            Helpers::BuildProfile('C',$user);
+                            break;
+                        case 'Agency':
+                            Helpers::BuildProfile('A',$user,$post_data['agency_name']);
+                            break;
+                        case 'Individual':
+                            Helpers::BuildProfile('F',$user);
+                            break;
+                    }
+
+
+                    $response['status'] = 'Success';
+                    $response['message'] = 'User added successfully ';
+
+                    return $response;
+
+                } catch (\Cartalyst\Sentry\Users\UserExistsException $e) {
+                    echo $e->getMessage();
+
+                    $response['status'] = 'Error';
+                    $response['message'] = 'User already exists with provided email id '.$post_data['email'];
+                    return $response;
+                }
+            }
+            $response['status'] = 'Error';
+            $response['message'] = $valid_msg;
+            return $response;
+        }
+        return Theme::make('admin.create-default-profile', $viewModel);
+    }
+
+    public function ShowAllUsers()
+    {
+        $viewModel['users'] = User::UsersList();
+
+        return Theme::make('admin.show-all-users', $viewModel);
+    }
+
+    public function FilterUsersByEmail()
+    {
+        if(Request::isMethod('post'))
+        {
+            $email = Input::get('email');
+
+            return User::FindUserByEmail($email);
+        }
+        return null;
+    }
+
+    public function ActiveDeactivateUser()
+    {
+
+        if (Request::isMethod('post')) {
+
+            $userId = Input::get('user_id');
+
+            $status = 'Active';
+
+            try {
+                $throttle = Sentry::findThrottlerByUserId($userId);
+
+
+                if (!$throttle->isBanned()) {
+                    $throttle->ban();
+                    $status = 'Inactive';
+                } else {
+                    $throttle->unBan();
+                }
+            } catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
+                echo 'User was not found.';
+            }
+            return $status;
+        } else {
+            return Redirect::to('/');
+        }
+    }
+
+
+    public function setProfileToSession()
+    {
+        if (Request::isMethod('post')) {
+            $post_data = Input::all();
+            //Helpers::debug($post_data,1);
+             Helpers::CustomSession(PROFILE_USER_ID, $post_data['id']);
+            //echo Helpers::CustomSession(PROFILE_USER_ID);
+            return 1;
+        } else {
+            return Redirect::to('admin');
+        }
+    }
+
+    public function jobRequest()
+    {
+        $id = Request::segment(3);
+
+        $nid = Helpers::EncodeDecode($id,false);
+
+        $notification = Notification::find($nid);
+
+        if(count($notification))
+        {
+            $oid = Helpers::EncodeDecode($notification->object_id,false);
+            $jobRequest = JobRequest::find($oid);
+
+            if(count($jobRequest))
+            {
+                $viewModel = array('user'=>$this->user,'notification'=>$notification,'jobRequest'=>$jobRequest);
+                return Theme::make('notification.admin.job-request',$viewModel);
+
+            }else{
+
+                Helpers::addMessage(400, 'No job request found, may be link was expired.');
+                return Redirect::to('admin');
+            }
+
+        }else{
+            Helpers::addMessage(400, ' No job request notification found');
+            return Redirect::to('admin');
+        }
+
+    }
+
+    public function UpdateJobRequest()
+    {
+        if(Request::isMethod('post'))
+        {
+
+            $post_all = Input::all();
+            $jobRequest = JobRequest::Persist(array('id'=>$post_all['id'],'request_status'=>$post_all['request_status']));
+            if($post_all['request_status'] == 'Approved'){
+                Helpers::addMessage(200, ' Job Request '.$post_all['request_status']);
+                $jobPost = JobPost::find($jobRequest->job_id);
+                if(count($jobPost) && $jobPost->job_status=='Pending'){
+                    $jobPost->job_status = "Approved";
+                    $jobPost->save();
+                }
+            }
+            else
+                Helpers::addMessage(400, ' Job Request '.$post_all['request_status']);
+            $notification = Notification::find($post_all['nid']);
+            if(count($notification))
+            {
+                $notification->read_status = 1;
+                $notification->save();
+            }
+            return Redirect::to('admin/job-request/'.$post_all['url']);
+        }else{
+
+            return Redirect::to('admin');
+        }
+    }
+
+    public function JobInvitation()
+    {
+        $id = Request::segment(3);
+
+        $nid = Helpers::EncodeDecode($id,false);
+
+        $notification = Notification::find($nid);
+
+        if(count($notification))
+        {
+            $oid = Helpers::EncodeDecode($notification->object_id,false);
+            $jobOffer = JobOffer::find($oid);
+
+            if(count($jobOffer))
+            {
+                $viewModel = array('user'=>$this->user,'notification'=>$notification,'jobOffer'=>$jobOffer);
+                if($jobOffer->job_offer_status=="Canceled"){
+                    $notification->read_status = 1;
+                    $notification->save();
+                }
+                View::share('notifications',(count($this->adminProfile))? $this->adminProfile->UnreadNotifications : array());
+                return Theme::make('notification.admin.job-invitation',$viewModel);
+
+            }else{
+
+                Helpers::addMessage(400, 'No job invitation found, may be link was expired.');
+                return Redirect::to('admin');
+            }
+
+        }else{
+            Helpers::addMessage(400, ' No job invitation notification found');
+            return Redirect::to('admin');
+        }
+    }
+    public function UpdateJobInvitation()
+    {
+        if(Request::isMethod('post'))
+        {
+
+            $post_all = Input::all();
+//            Helpers::debug($post_all,1);
+            if($post_all['job_offer_status']=="Approved")
+                $reason = "Job offer has been approved by admin";
+            else
+                $reason = "Job offer has been canceled by admin";
+
+            $jobOffer = JobOffer::Persist(array(
+                'id'=>$post_all['id'],
+                'job_offer_status_reason'=>$reason,
+                'job_offer_status'=>$post_all['job_offer_status']
+            ));
+
+
+            if($post_all['job_offer_status'] == 'Approved'){
+                Helpers::addMessage(200, ' Job Offer has been'.$post_all['job_offer_status']);
+                $jobPost = JobPost::find($jobOffer->job_post_id);
+                if(count($jobPost) && $jobPost->job_status=='Pending'){
+                    $jobPost->job_status = "Approved";
+                    $jobPost->save();
+                }
+            }
+            else
+                Helpers::addMessage(400, ' Job Offer has been'.$post_all['job_offer_status']);
+
+            $notification = Notification::find($post_all['nid']);
+            if(count($notification))
+            {
+                $notification->read_status = 1;
+                $notification->save();
+            }
+            return Redirect::to('admin/job-invitation/'.$post_all['url']);
+        }else{
+
+            return Redirect::to('admin');
+        }
+    }
+
+
+    public function NewJob()
+    {
+        $id = Request::segment(3);
+
+        $nid = Helpers::EncodeDecode($id,false);
+
+        $notification = Notification::find($nid);
+
+        if(count($notification))
+        {
+            $oid = Helpers::EncodeDecode($notification->object_id,false);
+            $jobPost = JobPost::find($oid);
+
+            if(count($jobPost))
+            {
+                $viewModel = array('user'=>$this->user,'notification'=>$notification,'jobPost'=>$jobPost);
+                return Theme::make('notification.admin.new-job',$viewModel);
+
+            }else{
+
+                Helpers::addMessage(400, 'No new job found, may be link was expired.');
+                return Redirect::to('admin');
+            }
+
+        }else{
+            Helpers::addMessage(400, ' No new job notification found');
+            return Redirect::to('admin');
+        }
+
+    }
+    public function UpdateNewJob()
+    {
+        if(Request::isMethod('post'))
+        {
+
+            $post_all = Input::all();
+            $jobPost = JobPost::Persist(array('id'=>Helpers::EncodeDecode($post_all['id'],false),'job_status'=>$post_all['job_status']));
+            if($post_all['job_status'] == 'Approved'){
+                Helpers::addMessage(200, ' Job '.$post_all['job_status']);
+            }
+            else
+                Helpers::addMessage(400, ' Job '.$post_all['job_status']);
+            $notification = Notification::find($post_all['nid']);
+            if(count($notification))
+            {
+                $notification->read_status = 1;
+                $notification->save();
+            }
+            return Redirect::to('admin/new-job/'.$post_all['url']);
+        }else{
+            Helpers::addMessage(400, 'No record found');
+            return Redirect::to('admin');
+        }
+    }
+    public function payment()
+    {
+        $id = Request::segment(3);
+        $notificationId = Helpers::EncodeDecode($id,false);
+        $notificationObj = Notification::find($notificationId);
+
+        if(count($notificationObj))
+        {
+            $paymentId = Helpers::EncodeDecode($notificationObj->object_id,false);
+            $paymentObj = Payments::find($paymentId);
+            $viewModel = array();
+            $viewModel['payment'] = $paymentObj;
+            $viewModel['notification'] = $notificationObj;
+           /* $notificationObj->read_status = 1;
+            $notificationObj->save();*/
+
+            View::share('notifications',(count($this->adminProfile))? $this->adminProfile->UnreadNotifications : array());
+            return Theme::make('notification.admin.payment',$viewModel);
+
+        }else{
+            Helpers::addMessage(400, 'No notification found');
+        }
+    }
+
+    public function updatePaymentStatus()
+    {
+        if(Request::isMethod('POST'))
+        {
+            $id = Input::get('payment_id');
+            $id = Helpers::EncodeDecode($id,false);
+            $paymentObj = Payments::find($id);
+            $paymentObj->payment_status = 'Paid';
+            $paymentObj->save();
+            $nid = Input::get('nid');
+            $notificationId = Helpers::EncodeDecode($nid,false);
+            $notificationObj = Notification::find($notificationId);
+            $notificationObj->read_status = 1;
+            $notificationObj->save();
+            View::share('notifications',(count($this->adminProfile))? $this->adminProfile->UnreadNotifications : array());
+            return Redirect::to('admin/payment/'.$nid);
+        }else{
+            Helpers::addMessage(400, 'No record found');
+            return Redirect::to('admin');
+        }
+    }
+} 
